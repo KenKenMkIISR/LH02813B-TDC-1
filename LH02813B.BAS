@@ -11,6 +11,7 @@ REM 8  LED+ (+3.3V)
 REM 9  LED- (GND)
 REM 10 NC(?)
 
+REM Video Off
 SYSTEM 200,0
 
 GOSUB LHINIT
@@ -75,7 +76,8 @@ LABEL PUTTIM
 RETURN
 
 LABEL PUTNUM
- REM PUTNUM,Segment No,Num
+ REM PUTNUM,Segment No,Num,CommaFlag
+ REM Num<0 means space
  VAR A,D
  A=ARGS(1)
  IF ARGS(2)>=0 THEN D=FONT(ARGS(2)) ELSE D=0
